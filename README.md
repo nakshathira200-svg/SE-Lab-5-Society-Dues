@@ -1,51 +1,92 @@
-# Lab 5: Static Code Analysis — Apartment Society Maintenance Dues Ledger
+# SE Lab 5 – Static Code Analysis
+## Apartment Society Maintenance Dues Ledger
 
-**Your file:** `society_dues.py`
+**Student Name:** Nakshathira B  
+**SRN:** PES2UG24AM096  
+**Course:** Software Engineering  
+**Lab Number:** 5
 
-Follow the lab handout for the full instructions.
+## 1. Project Overview
 
-## About the program
+This project focuses on analyzing and improving a Python-based apartment society maintenance dues ledger using static code analysis tools.
 
-A dues ledger for a residential society. It bills flats each month, collects payments, works out late fees and lists the flats that still owe money.
+The application supports:
+- Adding monthly maintenance dues.
+- Collecting payments.
+- Calculating late fees.
+- Listing flats with pending payments.
 
-The code works, but only just. It has quality, style and security problems of the kind Pylint, Flake8 and Bandit are built to find.
+## 2. Tools Used
 
-## What to do
+- Python 3
+- Pylint
+- Flake8
+- Bandit
+- SQLite
 
-1. **Run it first** and read the output carefully:
-   ```bash
-   python society_dues.py
-   ```
-   It runs a short demonstration and may create a small output file in the current folder, so run it from a folder you don't mind adding files to.
+## 3. Issues Identified
 
-2. **Install the tools:**
-   ```bash
-   pip install pylint bandit flake8
-   ```
+- SQL injection vulnerability.
+- Unsafe use of eval().
+- Mutable default arguments.
+- Broad exception handling.
+- Hardcoded credentials.
+- PEP 8 formatting violations.
+- Missing documentation and inconsistent return statements.
 
-3. **Run the analysis** and save the reports:
-   ```bash
-   pylint society_dues.py > pylint_report.txt
-   bandit -r society_dues.py > bandit_report.txt
-   flake8 society_dues.py > flake8_report.txt
-   ```
+## 4. Improvements Implemented
 
-4. **Document the issues** in `issues.md` using this table (at least 4 rows, high and medium severity first):
+- Replaced SQL string interpolation with parameterized queries.
+- Implemented safe arithmetic expression evaluation using Python AST.
+- Replaced mutable default arguments with None.
+- Added specific exception handling.
+- Replaced hardcoded password with environment-variable configuration.
+- Improved naming conventions and formatting.
+- Added function and module documentation.
+- Added explicit return values.
 
-   | Issue | Type | Line(s) | Description | Fix Approach |
-   |-------|------|---------|-------------|--------------|
-   | ... | ... | ... | ... | ... |
+## 5. Static Analysis Results
 
-5. **Fix the code.** Fix at least 4 of the issues you documented, then rerun all three tools to confirm they are gone. Repeat until you are satisfied. The program should still do its job when you are done.
+| Tool | Before | After |
+|---|---:|---:|
+| Pylint | 5.81/10 | 10.00/10 |
+| Flake8 | 5 violations | 0 violations |
+| Bandit | 3 findings | 0 findings |
 
-6. **Reflect.** Answer the four reflection questions from the handout in `reflection.md`.
+## 6. Functionality and Security Testing
 
-## Deliverables
+The corrected application was tested for:
+1. Independent history lists.
+2. SQL injection protection.
+3. Arithmetic evaluation.
+4. Rejection of malicious expressions.
+5. Payment collection.
+6. Pending dues identification.
 
-1. `society_dues.py`: your cleaned version, with at least 4 issues fixed.
-2. `issues.md`: the completed issue table.
-3. `reflection.md`: your answers to the reflection questions.
+All six tests passed.
 
-**Target:** aim for a Pylint score above 9.5 on your final file. A perfect 10.00/10 is very good.
+## 7. Program Output
 
-Be ready to explain the bugs you found and how you fixed them. You may be called on to present.
+The original demonstration output was preserved:
+
+```text
+2500
+100
+['A-102']
+```
+
+## 8. Deliverables
+
+- society_dues.py
+- issues.md
+- original_output.txt
+- final_output.txt
+- pylint_before.txt and pylint_after.txt
+- flake8_before.txt and flake8_after.txt
+- bandit_before.txt and bandit_after.txt
+
+## 9. Conclusion
+
+Static code analysis helped identify security vulnerabilities, programming errors and style violations.
+
+After implementing the improvements, the application achieved a Pylint score of 10.00/10, zero Flake8 violations and zero Bandit findings while preserving its original demonstration functionality.
