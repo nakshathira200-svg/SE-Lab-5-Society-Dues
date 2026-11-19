@@ -2,7 +2,6 @@
 
 import ast
 import operator
-import os
 import sqlite3
 
 conn = sqlite3.connect(":memory:")
@@ -16,8 +15,6 @@ conn.execute(
     )
     """
 )
-
-TREASURER_PASSWORD = os.getenv("TREASURER_PASSWORD")
 
 
 def add_due(flat, month, amount, history=None):

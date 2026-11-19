@@ -1,0 +1,11 @@
+test_independent_history_lists (test_society_dues.SocietyDuesTests) ... ok
+test_malicious_expression_rejected (test_society_dues.SocietyDuesTests) ... ok
+test_payment_collection (test_society_dues.SocietyDuesTests) ... ok
+test_pending_dues (test_society_dues.SocietyDuesTests) ... ok
+test_sql_injection_protection (test_society_dues.SocietyDuesTests) ... ok
+test_valid_arithmetic (test_society_dues.SocietyDuesTests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.000s
+
+OK

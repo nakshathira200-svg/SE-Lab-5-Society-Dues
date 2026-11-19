@@ -30,7 +30,7 @@ The application supports:
 - Unsafe use of eval().
 - Mutable default arguments.
 - Broad exception handling.
-- Hardcoded credentials.
+- Hardcoded password-like constant.
 - PEP 8 formatting violations.
 - Missing documentation and inconsistent return statements.
 
@@ -40,7 +40,7 @@ The application supports:
 - Implemented safe arithmetic expression evaluation using Python AST.
 - Replaced mutable default arguments with None.
 - Added specific exception handling.
-- Replaced hardcoded password with environment-variable configuration.
+- Removed the unused hardcoded password constant.
 - Improved naming conventions and formatting.
 - Added function and module documentation.
 - Added explicit return values.
@@ -84,6 +84,8 @@ The original demonstration output was preserved:
 - pylint_before.txt and pylint_after.txt
 - flake8_before.txt and flake8_after.txt
 - bandit_before.txt and bandit_after.txt
+- test_society_dues.py
+- test_results.txt
 
 ## 9. Conclusion
 
